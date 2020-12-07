@@ -1,0 +1,43 @@
+{% extends 'dbms/base.html' %}
+
+{% block content %}
+        <br>
+        <br>
+            <h1>Welcome to pharma</h1>
+        <br>
+        <br>
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Medicine</h5>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Medicine</th>
+							<th>Manufactured</th>
+							<th>Expiry</th>
+                            <th>Prescription</th>
+                            <th>Warehouse</th>
+							<th>Update</th>
+						</tr>
+
+						{% for i in med %}
+							<tr>
+								<td>{{i.med_name}}</td>
+								<td>{{i.manufacture_date}}</td>
+								<td>{{i.expiry_date}}</td>
+                                <td>{{i.description}}</td>
+                                <td>{{i.warehouse}}</td>
+								<td><a class="btn btn-sm btn-info" style="padding : 8px 12px;" href="">view</a></td>
+  							</tr>
+						{% endfor %}
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+      </div>
+
+{% endblock %}

@@ -1,0 +1,42 @@
+{% extends 'dbms/base.html' %}
+{% load static %}
+{% block content %}
+        <br>
+        <br>
+            <h1>Welcome to pharma</h1>
+        <br>
+        <br>
+		<div class="row">
+			<div class="col-md">
+				<td><a class="btn btn-sm btn-info" style="padding : 8px 12px;" href="/admin/dbms/agent">Create</a></td>
+				<div class="card card-body">
+					<h5>Agents</h5>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Agent</th>
+							<th>Stock</th>
+							<th>Amount</th>
+                            <th>Medicine ID</th>
+							<th>Update</th>
+						</tr>
+
+						{% for i in agents %}
+							<tr>
+								<td>{{i.agent_name}}</td>
+								<td>{{i.stock}}</td>
+								<td>{{i.total_amount}}</td>
+                                <td>{{i.med_id_id}}</td>
+								<td><a class="btn btn-sm btn-info" style="padding : 8px 12px;" href="/admin/dbms/agent/{{i.id}}/change/">Update</a></td>
+  							</tr>
+						{% endfor %}
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+      </div>
+
+{% endblock %}

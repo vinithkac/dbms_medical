@@ -1,0 +1,39 @@
+{% extends 'dbms/base.html' %}
+
+{% block content %}
+        <br>
+        <br>
+            <h1>Welcome to pharma</h1>
+        <br>
+        <br>
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Employees</h5>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Name</th>
+							<th>Phone</th>
+							<th>Unit</th>
+                            <th>Salary</th>
+						</tr>
+
+						{% for i in emp %}
+							<tr>
+								<td>{{i.emp_name}}</td>
+								<td>{{i.emp_phone}}</td>
+								<td>{{i.location}}</td>
+                                <td>{{i.emp_salary}}</td>
+  							</tr>
+						{% endfor %}
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+      </div>
+
+{% endblock %}

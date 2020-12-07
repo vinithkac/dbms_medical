@@ -1,0 +1,39 @@
+{% extends 'dbms/base.html' %}
+
+{% block content %}
+        <br>
+        <br>
+            <h1>Welcome to pharma</h1>
+        <br>
+        <br>
+		<div class="row">
+			<div class="col-md">
+				<div class="card card-body">
+					<h5>Invoice</h5>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Customer ID</th>
+							<th>Employee ID</th>
+							<th>Medicine ID</th>
+                            <th>Date</th>
+						</tr>
+
+						{% for i in invoices %}
+							<tr>
+								<td>{{i.customer_id}}</td>
+								<td>{{i.employee_id}}</td>
+								<td>{{i.medicine_id}}</td>
+                                <td>{{i.bill_date}}</td>
+  							</tr>
+						{% endfor %}
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+      </div>
+
+{% endblock %}

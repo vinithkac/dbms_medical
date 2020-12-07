@@ -1,0 +1,44 @@
+{% extends 'dbms/base.html' %}
+
+{% block content %}
+        <br>
+        <br>
+            <h1>Welcome to pharma</h1>
+        <br>
+        <br>
+		<div class="row">
+			<div class="col-md">
+				<td><a class="btn btn-sm btn-info" style="padding : 8px 12px;" href="/admin/dbms/customer">Create</a></td>
+				<div class="card card-body">
+					<h5>Customers</h5>
+				</div>
+				<div class="card card-body">
+					<table class="table">
+						<tr>
+							<th>Customer</th>
+							<th>Phone</th>
+							<th>Date</th>
+                            <th>Amount</th>
+							<th>Update</th>
+							<th>Delete</th>
+						</tr>
+
+						{% for i in customers %}
+							<tr>
+								<td>{{i.customer_name}}</td>
+								<td>{{i.phone}}</td>
+								<td>{{i.date_created}}</td>
+                                <td>{{i.total_amount}}</td>
+								<td><a class="btn btn-sm btn-info" style="padding : 8px 12px;" href="/admin/dbms/customer/{{i.id}}/change/">Update</a></td>
+								<td><a class="btn btn-sm btn-danger" style="padding : 8px 12px;" href="">Delete</a></td>
+  							</tr>
+						{% endfor %}
+
+					</table>
+				</div>
+			</div>
+
+		</div>
+      </div>
+
+{% endblock %}
